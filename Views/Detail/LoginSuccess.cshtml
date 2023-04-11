@@ -1,0 +1,54 @@
+﻿@model List<StudentManagementDemo.Models.Entities.Student>
+@{
+    ViewData["Title"] = "Success";
+}
+<button class="nav-item" style="color:aquamarine;background-color:burlywood;text-align:center;font-size:10px">
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">SIGN OUT</a>
+</button>
+<table class="table">
+    <tr>
+        <th>StudentID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Date Of Birth</th>
+        <th>Gender</th>
+        <th>Score</th>
+        @if (Model.Count > 1)
+        {
+            <th></th>
+        }
+        
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.StudentId</td>
+            <td>@item.Name</td>
+            <td>@item.Address</td>
+            <td>@item.DateOfBirth</td>
+            <td>@item.Gender</td>
+            <td>@item.Score</td>
+            @if (Model.Count > 1)
+            {
+            <td>
+                <div>
+                <button class="nav-item" style="color:white;background-color:white;text-align:center;font-size:10px" onclick="editStudent('@item.StudentId')">
+                            <a class="nav-link" >EDIT</a>
+                </button>
+                    <button class="nav-item" style="color:white;background-color:white;text-align:center;font-size:10px">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">DELETE</a>
+                    </button>
+                </div>
+            </td>
+            }
+
+        </tr>
+    }
+</table>
+
+<script>
+    function editStudent(StudentId) {
+        var url = '/Detail/Edit?StudentId=' + StudentId; // Tạo URL với giá trị StudentId
+        window.location.href = url; // Chuyển hướng đến URL đã tạo
+    }
+</script>

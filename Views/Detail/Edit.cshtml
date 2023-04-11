@@ -1,0 +1,22 @@
+﻿@model List<StudentManagementDemo.Models.Entities.Student>
+@{
+    ViewData["Title"] = "Edit View";
+}
+@foreach(var item in Model){
+<form>
+    <h1 style="font-size:15px">StudentID</h1>
+    <input type="text" name="StudentId" value="@item.StudentId"/>
+    <h1 style="font-size:15px">Name</h1>
+    <input type="text" name="Name" value="@item.Name"/>
+    <h1 style="font-size:15px">Address</h1>
+    <input type="text" name="Address" value="@item.Address"/>
+    <h1 style="font-size:15px">Date of birth</h1>
+    <input type="text" name="DateOfBirth" value="@item.DateOfBirth"/>
+    <h1 style="font-size:15px">Gender</h1>
+    <input type="checkbox" name="Gender" value="@item.Gender"/>
+    <h1 style="font-size:15px">Score</h1>
+    <input type="text" name="Score" value="@item.Score"/>
+    <h1></h1>
+    <input type="submit" name="OK" value="SAVE" />
+</form>
+}
