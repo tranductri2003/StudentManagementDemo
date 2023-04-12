@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "D5T9VMfuAKTGqndy6BZ93rUgLK7qVs1EKVcKEpLQluVlWsV5kcjqy+pwDqMOcKA5ljYH1vaBZMxYBRopCxTYcg==",
+  "dgSpecHash": "OkMwRjb8+Wq3J/q44W7MBdkeZ3VOdVGWHBFOdtAsBahOQ5iJ/38040kc62dUuN7YURa8C40i/YvFTADTIjVAJA==",
   "success": true,
   "projectFilePath": "D:\\Code\\Bach Khoa\\.NET\\DOTNET\\StudentManagementDemo\\StudentManagementDemo.csproj",
   "expectedPackageFiles": [
@@ -187,7 +187,11 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\ADMIN\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
   ],
   "logs": []
 }

@@ -16,4 +16,5 @@ public partial class Student
     public bool? Gender { get; set; }
 
     public double? Score { get; set; }
+
 }

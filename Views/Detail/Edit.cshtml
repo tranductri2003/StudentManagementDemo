@@ -3,7 +3,7 @@
     ViewData["Title"] = "Edit View";
 }
 @foreach(var item in Model){
-<form>
+<form action="~/Detail/Save">
     <h1 style="font-size:15px">StudentID</h1>
     <input type="text" name="StudentId" value="@item.StudentId"/>
     <h1 style="font-size:15px">Name</h1>
@@ -12,8 +12,9 @@
     <input type="text" name="Address" value="@item.Address"/>
     <h1 style="font-size:15px">Date of birth</h1>
     <input type="text" name="DateOfBirth" value="@item.DateOfBirth"/>
-    <h1 style="font-size:15px">Gender</h1>
-    <input type="checkbox" name="Gender" value="@item.Gender"/>
+        <h1 style="font-size:15px">Gender</h1>
+        <input type="radio" name="Gender" value="true" @(item.Gender == true ? "checked" : "")> Male
+        <input type="radio" name="Gender" value="false" @(item.Gender == false ? "checked" : "")> Female
     <h1 style="font-size:15px">Score</h1>
     <input type="text" name="Score" value="@item.Score"/>
     <h1></h1>
