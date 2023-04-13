@@ -10582,11 +10582,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\Bach Khoa\\.NET\\DOTNET\\StudentManagementDemo\\StudentManagementDemo.csproj",
+      "projectUniqueName": "D:\\Code\\Bach Khoa\\.NET\\DOTNET\\StudentManagemetDemoNew\\StudentManagementDemo\\StudentManagementDemo.csproj",
       "projectName": "StudentManagementDemo",
-      "projectPath": "D:\\Code\\Bach Khoa\\.NET\\DOTNET\\StudentManagementDemo\\StudentManagementDemo.csproj",
+      "projectPath": "D:\\Code\\Bach Khoa\\.NET\\DOTNET\\StudentManagemetDemoNew\\StudentManagementDemo\\StudentManagementDemo.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\Bach Khoa\\.NET\\DOTNET\\StudentManagementDemo\\obj\\",
+      "outputPath": "D:\\Code\\Bach Khoa\\.NET\\DOTNET\\StudentManagemetDemoNew\\StudentManagementDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

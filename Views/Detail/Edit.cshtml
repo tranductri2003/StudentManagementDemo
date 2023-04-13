@@ -1,11 +1,14 @@
 ﻿@model List<StudentManagementDemo.Models.Entities.Student>
+
 @{
     ViewData["Title"] = "Edit View";
 }
 @foreach(var item in Model){
-<form action="~/Detail/Save">
+<form action="~/Detail/SaveEdit">
     <h1 style="font-size:15px">StudentID</h1>
-    <input type="text" name="StudentId" value="@item.StudentId"/>
+    <input type="text" readonly name="StudentId" value="@item.StudentId"/>
+    <h1 style="font-size:15px">password</h1>
+        <input type="text" name="password" value="" />
     <h1 style="font-size:15px">Name</h1>
     <input type="text" name="Name" value="@item.Name"/>
     <h1 style="font-size:15px">Address</h1>

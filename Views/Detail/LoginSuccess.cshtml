@@ -5,6 +5,14 @@
 <button class="nav-item" style="color:aquamarine;background-color:burlywood;text-align:center;font-size:10px">
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">SIGN OUT</a>
 </button>
+
+@if (Model.Count > 1)
+{
+    <button class="nav-item" style="color:aquamarine;background-color:lightgreen;text-align:center;font-size:10px">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Detail" asp-action="Add">ADD NEW STUDENT</a>
+    </button>
+}
+
 <table class="table">
     <tr>
         <th>StudentID</th>

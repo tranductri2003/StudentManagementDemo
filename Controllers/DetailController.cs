@@ -30,44 +30,81 @@ namespace StudentManagementDemo.Controllers
         {
             StudentManagementDemoContext db = new StudentManagementDemoContext();
             var s = db.Students.Where(p => p.StudentId == StudentId).Select(p => p).ToList();
-            return View(s);
-            
+            return View(s); 
+        }
+        public IActionResult Add()
+        {
+            return View();
         }
         public IActionResult Delete(string StudentId)
         {
-            //using (var context = new StudentManagementDemoContext())
-            //{
-            //    // Tìm sinh viên cần xóa
-            //    var student = context.Students.Find(StudentId);
-
-            //    // Xóa các tài khoản liên quan đến sinh viên
-            //    foreach (var account in student.Accounts.ToList())
-            //    {
-            //        context.Accounts.Remove(account);
-            //    }
-
-            //    // Xóa sinh viên
-            //    context.Students.Remove(student);
-
-            //    // Lưu thay đổi vào cơ sở dữ liệu
-            //    context.SaveChanges();
-            //}
+            StudentManagementDemoContext db = new StudentManagementDemoContext();
+            var s = db.Accounts.Where(p => p.Account1 == StudentId).Select(p => p).ToList();
+            foreach (var item in s)
+            {
+                db.Accounts.Remove(item);
+            }
+            var ss = db.Students.Where(p => p.StudentId == StudentId).Select(p => p).ToList();
+            foreach (var item in ss)
+            {
+                db.Students.Remove(item);
+            }
+            db.SaveChanges();
             return RedirectToAction("LoginSuccess", "Detail", new { StudentID = "Admin" });
         }
-        public IActionResult Save(string StudentID, string Name, string Address, string DateOfBirth, bool Gender, double Score)
+        public IActionResult SaveAdd(string StudentID, string Name, string Address, string DateOfBirth, bool Gender, double Score, string password)
         {
 
-            //System.Diagnostics.Debug.WriteLine(StudentID+Name+ Address);
+
             StudentManagementDemoContext db = new StudentManagementDemoContext();
             using (db)
             {
                 // Lấy đối tượng bản ghi cần cập nhật từ cơ sở dữ liệu
                 var student = db.Students.FirstOrDefault(s => s.StudentId == StudentID);
+                var account = db.Accounts.FirstOrDefault(s => s.Account1 == StudentID);
+                if (student == null)
+                {
+                    // Cập nhật giá trị của trường trong đối tượng bản ghi
+                    student.StudentId = StudentID;
+                    if (password != null)
+                    {
+                        account.Password = password;
+                    }
+                    student.Name = Name;
+                    student.Address = Address;
+                    student.DateOfBirth = DateOfBirth;
+                    student.Gender = Gender;
+                    student.Score = Score;
 
+                    // Lưu các thay đổi vào cơ sở dữ liệu
+                    db.SaveChanges();
+                }
+                else
+                {
+                    //return RedirectToAction("ExistedAccount", "Detail");
+                    return View();
+                }
+            }
+            return RedirectToAction("LoginSuccess", "Detail", new { StudentID = "Admin" });
+        }
+        public IActionResult SaveEdit(string StudentID, string Name, string Address, string DateOfBirth, bool Gender, double Score, string password)
+        {
+
+
+            StudentManagementDemoContext db = new StudentManagementDemoContext();
+            using (db)
+            {
+                // Lấy đối tượng bản ghi cần cập nhật từ cơ sở dữ liệu
+                var student = db.Students.FirstOrDefault(s => s.StudentId == StudentID);
+                var account = db.Accounts.FirstOrDefault(s=> s.Account1 == StudentID);
                 if (student != null)
                 {
                     // Cập nhật giá trị của trường trong đối tượng bản ghi
                     student.StudentId = StudentID;
+                    if (password !=null)
+                    {
+                        account.Password = password;
+                    }
                     student.Name = Name;
                     student.Address = Address;
                     student.DateOfBirth = DateOfBirth;

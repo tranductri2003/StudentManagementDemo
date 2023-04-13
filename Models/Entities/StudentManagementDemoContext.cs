@@ -27,9 +27,8 @@ public partial class StudentManagementDemoContext : DbContext
     {
         modelBuilder.Entity<Account>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("ACCOUNT");
+            entity.HasKey(e => e.Account1).HasName("PK__ACCOUNT__B0C3AC47692F8A34");
+            entity.ToTable("ACCOUNT");
 
             entity.Property(e => e.Account1)
                 .HasMaxLength(100)
