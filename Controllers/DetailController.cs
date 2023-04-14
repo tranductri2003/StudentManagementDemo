@@ -2,6 +2,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using StudentManagementDemo.Models.Entities;
+using System.Diagnostics;
 
 namespace StudentManagementDemo.Controllers
 {
@@ -52,6 +53,12 @@ namespace StudentManagementDemo.Controllers
             db.SaveChanges();
             return RedirectToAction("LoginSuccess", "Detail", new { StudentID = "Admin" });
         }
+        public IActionResult ChangePassword(string StudentId)
+        {
+
+            ViewBag.MyString = StudentId; // Truyền chuỗi vào ViewBags
+            return View();
+        }
         public IActionResult SaveAdd(string StudentID, string Name, string Address, string DateOfBirth, bool Gender, double Score, string password)
         {
 
@@ -64,25 +71,28 @@ namespace StudentManagementDemo.Controllers
                 var account = db.Accounts.FirstOrDefault(s => s.Account1 == StudentID);
                 if (student == null)
                 {
-                    // Cập nhật giá trị của trường trong đối tượng bản ghi
-                    student.StudentId = StudentID;
-                    if (password != null)
-                    {
-                        account.Password = password;
-                    }
-                    student.Name = Name;
-                    student.Address = Address;
-                    student.DateOfBirth = DateOfBirth;
-                    student.Gender = Gender;
-                    student.Score = Score;
+                    Student newStudent = new Student();
+                    Account newAccount = new Account();
 
+                    
+                    newStudent.StudentId = StudentID;
+                    newStudent.Name = Name;
+                    newStudent.Address = Address;
+                    newStudent.DateOfBirth = DateOfBirth;
+                    newStudent.Gender = Gender;
+                    newStudent.Score = Score;
+                    newAccount.Account1 = StudentID;
+                    newAccount.Password = password;
+
+                    db.Students.Add(newStudent);
+                    db.Accounts.Add(newAccount);
                     // Lưu các thay đổi vào cơ sở dữ liệu
+
                     db.SaveChanges();
                 }
                 else
                 {
-                    //return RedirectToAction("ExistedAccount", "Detail");
-                    return View();
+                    Response.WriteAsync("<script>alert('Existed Student ID!!!');</script>");
                 }
             }
             return RedirectToAction("LoginSuccess", "Detail", new { StudentID = "Admin" });
@@ -110,12 +120,44 @@ namespace StudentManagementDemo.Controllers
                     student.DateOfBirth = DateOfBirth;
                     student.Gender = Gender;
                     student.Score= Score;
-
                     // Lưu các thay đổi vào cơ sở dữ liệu
                     db.SaveChanges();
                 }
             }
             return RedirectToAction("LoginSuccess", "Detail", new { StudentID = "Admin" });
+        }
+        public IActionResult SaveChangePassword(string StudentId, string OldPassword, string NewPassword, string ConfirmPassword)
+        {
+            StudentManagementDemoContext db = new StudentManagementDemoContext();
+            var account = db.Accounts.FirstOrDefault(s => s.Account1 == StudentId);
+
+            if (account.Password!=OldPassword)
+            {
+                return RedirectToAction("WrongOldPassword", "Detail");
+            }
+            else
+            {
+                if (NewPassword!=ConfirmPassword)
+                {
+                    return RedirectToAction("WrongConfirmPassword", "Detail");
+                }
+                else
+                {
+                  
+                    account.Password= NewPassword;
+                    db.SaveChanges();
+                    ViewBag.Message = "Change Password Successfully!!!";
+                    return RedirectToAction("LoginSuccess", "Detail", new { StudentID = StudentId });
+                }
+            }
+        }
+        public IActionResult WrongOldPassword()
+        {
+            return View();
+        }
+        public IActionResult WrongConfirmPassword()
+        {
+            return View();
         }
     }
 }

@@ -20,12 +20,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Detail/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXEVkaXQuY3NodG1s
+[D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Detail/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Detail/ExistedAccount.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXEV4aXN0ZWRBY2NvdW50LmNzaHRtbA==
+[D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Detail/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Detail/LoginFail.cshtml]
@@ -34,6 +34,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Detail/LoginSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXExvZ2luU3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Detail/WrongConfirmPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXFdyb25nQ29uZmlybVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Detail/WrongOldPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXFdyb25nT2xkUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Code/Bach Khoa/.NET/DOTNET/StudentManagemetDemoNew/StudentManagementDemo/Views/Home/Index.cshtml]

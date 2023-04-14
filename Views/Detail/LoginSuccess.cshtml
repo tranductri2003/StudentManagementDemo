@@ -5,7 +5,13 @@
 <button class="nav-item" style="color:aquamarine;background-color:burlywood;text-align:center;font-size:10px">
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">SIGN OUT</a>
 </button>
-
+@if (Model.Count ==1)
+{
+    
+    <button class="nav-item" style="color:aquamarine;background-color:lightpink;text-align:center;font-size:10px " onclick="changePasswordStudent('@Model[0].StudentId')">
+        <a class="nav-link text-dark">CHANGE PASSWORD</a>
+    </button>
+}
 @if (Model.Count > 1)
 {
     <button class="nav-item" style="color:aquamarine;background-color:lightgreen;text-align:center;font-size:10px">
@@ -66,6 +72,12 @@
 <script>
     function editStudent(StudentId) {
         var url = '/Detail/Edit?StudentId=' + StudentId; // Tạo URL với giá trị StudentId
+        window.location.href = url; // Chuyển hướng đến URL đã tạo
+    }
+</script>
+<script>
+    function changePasswordStudent(StudentId) {
+        var url = '/Detail/ChangePassword?StudentId=' + StudentId; // Tạo URL với giá trị StudentId
         window.location.href = url; // Chuyển hướng đến URL đã tạo
     }
 </script>
